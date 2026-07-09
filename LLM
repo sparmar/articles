@@ -3,6 +3,7 @@ ollama serve
 ollama list
 ollama pull gemma4
 ollama pull gemma4:12b
+ollama run gemma4
 
 
 
