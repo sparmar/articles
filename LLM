@@ -1,0 +1,69 @@
+
+
+
+### 🚀 I. Model Management Commands (Working with Files)
+
+These commands handle downloading, listing, and checking models before you 
+can run them.
+
+| Example Command | Purpose | Description |
+| :--- | :--- | :--- |
+| `lms list` | **List Models** | Shows all the LLMs that have been 
+successfully downloaded or indexed by LM Studio on your machine. |
+| `lms pull <model-name>` | **Download Model** | Downloads a specific 
+model file (e.g., `gemma4:7b`). This is required before you can run it. |
+| `lms delete <model-name>` | **Clean Up** | Removes a large, unneeded 
+model file from your local storage to free up disk space. |
+| `lms info <model-name>` | **Check Model Info** | Provides details about 
+the model, such as required VRAM/RAM and quantization level. |
+
+### 💻 II. Execution & Server Commands (The Core Function)
+
+These commands start the actual operation of the LLM—either for a chat 
+session or for connecting to external apps.
+
+| Example Command | Purpose | Description |
+| :--- | :--- | :--- |
+| `lms run <model-name>` | **Direct Run/Chat** | Starts an immediate, 
+interactive command-line session with the specified model. This is used if 
+you just want to chat and don't need to integrate it into other apps. |
+| `lms serve --model <model-name>` | **Start Local Server (Primary)** | 
+Launches the core functionality: starting a local API server endpoint. 
+Other programs can connect to this running service using 
+`http://localhost:[port]`. **This is critical for development.** |
+| `lms stop` | **Stop Service** | Gracefully shuts down any currently 
+running model or API server managed by `lms`. |
+| `lms serve --hot-reload` | **Develop/Debug Mode** | Starts the server in 
+a mode that automatically detects and reloads changes to configuration or 
+code, useful for developers. |
+
+### 🔧 III. Configuration & Utility Commands (Settings)
+
+These commands manage the environment, connections, and settings of your 
+overall setup.
+
+| Example Command | Purpose | Description |
+| :--- | :--- | :--- |
+| `lms config --port <number>` | **Set Port** | Allows you to specify 
+which network port the local server should use (useful if another program 
+is already using the default port). |
+| `lms status` | **Check Status** | Reports the current state of the `lms` 
+utility—e.g., Is the model loaded? Is the server running? What resources 
+are being used? |
+| `lms version` | **Check Version** | Confirms that the CLI is working and 
+shows which specific commit/version you are running (as you demonstrated). 
+|
+
+---
+
+### 📝 Summary Workflow Cheat Sheet
+
+If you are following a typical developer workflow, your commands will 
+usually follow this sequence:
+
+1.  **Preparation:** `lms pull gemma4`
+2.  **Start Listening:** `lms serve --model gemma4`
+3.  ***(Background Task)*** Wait for the server to be ready.
+4.  **(In another program/script):** Your other code connects to the local 
+API address provided by step 2.
+5.  **Finished:** `lms stop`
