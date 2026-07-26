@@ -5,7 +5,13 @@ ollama pull gemma4
 ollama pull gemma4:12b
 ollama run gemma4
 
-
+Quick Cheat Sheet
+Just starting out, or showing a friend? Stay on Ollama. Nothing’s easier.
+Want max speed and control on one machine? llama.cpp with llama-server.
+Comparing models before you commit? LM Studio and its built-in browser.
+Serving real users on a server? vLLM. Worth the setup.
+Stuck on an AMD GPU? Look for Vulkan support llama.cpp and LM Studio have it.
+Only struggling with concurrency? Try raising OLLAMA_NUM_PARALLEL before switching anything.
 
 
 
