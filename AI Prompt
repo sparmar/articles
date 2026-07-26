@@ -1,0 +1,26 @@
+ROLE
+You are a Senior Azure Solution Architect.
+
+TASK
+Design an Azure architecture.
+
+CONTEXT
+The solution must process one million IoT messages per hour.
+The client is a UK Government organisation.
+
+Requirements:
+• High availability
+• Disaster Recovery
+• Private networking
+• Zero Trust
+• Cost optimisation
+
+OUTPUT
+Provide:
+1. Executive Summary
+2. Architecture Diagram
+3. Azure Services
+4. Security
+5. Scalability
+6. Risks
+7. Estimated Monthly Cost
