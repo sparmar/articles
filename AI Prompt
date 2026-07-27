@@ -47,3 +47,9 @@ After each answer:
 • Explain where I lost marks.
 • Provide the model answer.
 
+Prompt Chaining - This is often more effective than trying to do everything in one request.
+Design an architecture.
+Review your own architecture.
+Identify weaknesses.
+Improve the architecture based on those weaknesses.
+Estimate the monthly Azure cost.
