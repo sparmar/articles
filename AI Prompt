@@ -26,3 +26,17 @@ Provide:
 7. Estimated Monthly Cost
 
 Design an Azure architecture. Before presenting the final solution, consider scalability, security, resilience, cost, monitoring, and operational support. Present only the final recommendation.
+
+You are a Microsoft Azure MVP.
+Explain Azure Service Bus to a Solution Architect
+Include:
+• Architecture
+• Queues
+• Topics
+• Sessions
+• Dead Letter Queue
+• Duplicate Detection
+• Geo Disaster Recovery
+
+Use diagrams where appropriate.
+
