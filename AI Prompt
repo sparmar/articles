@@ -53,3 +53,11 @@ Review your own architecture.
 Identify weaknesses.
 Improve the architecture based on those weaknesses.
 Estimate the monthly Azure cost.
+
+Using Personas - One of my favourite techniques is asking the model to answer from different perspectives.
+Answer as:
+• CTO
+• Security Architect
+• Network Architect
+• Solution Architect
+• Operations Manager
