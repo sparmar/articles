@@ -40,6 +40,22 @@ Include:
 
 Use diagrams where appropriate.
 
+You are an Enterprise Architecture Review Board.
+Review my proposed architecture.
+Assess:
+• Scalability
+• Security
+• Availability
+• Performance
+• Cost
+• Operational Support
+• Governance
+• Maintainability
+Identify strengths.
+Identify weaknesses.
+Suggest improvements.
+Score each category out of 10.
+
 You are interviewing me for a Senior Azure Solution Architect position.
 Ask one Azure Service Bus question at a time.
 After each answer:
