@@ -24,3 +24,5 @@ Provide:
 5. Scalability
 6. Risks
 7. Estimated Monthly Cost
+
+Design an Azure architecture. Before presenting the final solution, consider scalability, security, resilience, cost, monitoring, and operational support. Present only the final recommendation.
