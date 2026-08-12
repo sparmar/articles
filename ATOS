@@ -1,1 +1,25 @@
 
+
+
+
+Customer Service
+  Customer: My washing machine stopped working.
+  Agent:
+* Finds warranty
+* Checks engineer availability
+* Books appointment
+* Orders replacement part
+* Sends calendar invite
+* Updates customer portal
+Human involvement:
+* None
+
+Healthcase
+  AI Agent:
+* Reads consultation transcript
+* Updates patient record
+* Creates referral letters
+* Books scans
+* Orders blood tests
+* Sends patient instructions
+Doctors spend more time treating patients.
