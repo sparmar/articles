@@ -147,21 +147,6 @@ Database Migration
 
 This is usually the hardest part.
 
-Initially:
-
-One Database
-Customers
-Orders
-Payments
-Inventory
-
-Later:
-
-Customer DB
-Order DB
-Payment DB
-Inventory DB
-
 Data ownership moves one domain at a time.
 
 ⸻
@@ -326,54 +311,6 @@ Suitable for: Small applications or when the legacy system is no longer viable.
 
 ⸻
 
-2. Branch by Abstraction
-
-Description
-
-Introduce an abstraction layer so old and new implementations can coexist behind the same interface.
-
-Application
-      │
-      ▼
-Abstraction Layer
-     │      │
-     ▼      ▼
-Old Code  New Code
-
-Advantages
-
-* Incremental replacement
-* Easy rollback
-* Transparent to callers
-
-Best for
-
-Large codebases where internal refactoring is needed without changing public APIs.
-
-⸻
-
-3. Anti-Corruption Layer (ACL)
-
-Popular in Domain-Driven Design (DDD).
-
-Description
-
-A translation layer isolates modern services from legacy models.
-
-New Service
-      │
-      ▼
-Anti-Corruption Layer
-      │
-      ▼
-Legacy System
-
-Benefits
-
-* Prevents legacy concepts leaking into new designs
-* Allows independent evolution
-
-⸻
 
 4. Parallel Run
 
@@ -441,38 +378,7 @@ Ideal for:
 
 ⸻
 
-7. Feature Toggles
 
-Control features using configuration instead of deployments.
-
-Feature Flag
-ON  → New Feature
-OFF → Legacy Feature
-
-Popular tools:
-
-* LaunchDarkly
-* Azure App Configuration
-* Unleash
-
-⸻
-
-8. Facade Pattern
-
-Place a simplified interface in front of the legacy application.
-
-Clients
-   │
-Facade API
-   │
-Legacy System
-
-Benefits:
-
-* Simplifies client interactions
-* Enables future backend changes without affecting consumers
-
-⸻
 
 9. Lift and Shift
 
