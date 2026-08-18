@@ -1,5 +1,6 @@
-# Vauxhall Motors Manufacturing  
-  developed mission-critical solution that was resilience and integrated distributed control systems
+# About Me
+## Vauxhall Motors Manufacturing  
+  Developed mission-critical solution that was resilience and integrated distributed control systems
   That focus on resilience and operational delivery has been the thread through my entire career
 
 From the "how" of the past to the "leadership" of my middle career. 
@@ -10,6 +11,7 @@ Most recently, I’ve applied these principles at scale using CGI RCDA (Risk and
     At the DWP, I defined enterprise solutions for high-volume services, presenting recommendations to the Digital Design Authority (DDA)
 At IQVIA, I’m currently leading the modernisation of a 15-year-old global platform, introducing event-driven architecture using Kafka, RabbitMQ, and .NET 8 to ensure business continuity during transformation"
 
+## AI
 Integration and transformation in my DNA / Agentic AI 
 - `AuthService`
 - `CustomerService`
@@ -18,8 +20,8 @@ Integration and transformation in my DNA / Agentic AI
 - `AuditService`
 - 'SemanticKernelAgentService
 
-
-Customer Service
+## Agentic AI
+### Customer Service
   Customer: My washing machine stopped working.
   Agent:
 * Finds warranty
@@ -31,7 +33,7 @@ Customer Service
 Human involvement:
 * None
 
-Healthcase
+### Healthcase
   AI Agent:
 * Reads consultation transcript
 * Updates patient record
