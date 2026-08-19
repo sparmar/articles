@@ -13,40 +13,40 @@ The fundamental shift in EDA involves moving from a request-driven model to a si
 | **Coupling** | Tightly coupled; the caller must know the address, API, and availability of the receiver. | Loosely coupled; components are abstracted from one another via a mediator or event mesh. |
 | **Consistency** | Strong/immediate consistency; easier to ensure data is synchronised across the transaction chain. | Eventual consistency; data may not be immediately synchronised across all distributed services. |
 
-Within this framework, an event is defined as a signal of a changed state (e.g., "OrderPlaced") [4]. Crucially, events represent occurrences in the past and are immutable; they cannot be altered or retracted once published, which ensures consistency in distributed state tracking [3, 6].
+Within this framework, an event is defined as a signal of a changed state (e.g., "OrderPlaced"). Crucially, events represent occurrences in the past and are immutable; they cannot be altered or retracted once published, which ensures consistency in distributed state tracking.
 
 2. Core Architectural Components
 
 EDA relies on three primary components to reduce interdependency and facilitate loose coupling across the enterprise:
 
-1. Event Producers: Entities that publish signals when a state change occurs. Examples include front-end websites, microservices, IoT devices, and SaaS applications [3, 6].
-2. Event Consumers: Downstream components that activate in response to events. Consumers may initiate workflows, perform real-time analytics, or update persistent databases [3, 6].
-3. Event Brokers: Mediators that manage event ingestion and distribution. Brokers include event routers, which push events to targets, and event stores, where consumers poll for events [3, 6]. In 2026, these often form an Event Mesh, a dynamic infrastructure layer that turns raw events into real-time context and powers agentic processing in production [1].
+1. Event Producers: Entities that publish signals when a state change occurs. Examples include front-end websites, microservices, IoT devices, and SaaS applications].
+2. Event Consumers: Downstream components that activate in response to events. Consumers may initiate workflows, perform real-time analytics, or update persistent databases.
+3. Event Brokers: Mediators that manage event ingestion and distribution. Brokers include event routers, which push events to targets, and event stores, where consumers poll for events. In 2026, these often form an Event Mesh, a dynamic infrastructure layer that turns raw events into real-time context and powers agentic processing in production.
 
-By abstracting components via a broker, architects minimise tight coupling, where a failure in one service typically propagates through a synchronous chain, leading to reduced fault tolerance [3, 4-5].
+By abstracting components via a broker, architects minimise tight coupling, where a failure in one service typically propagates through a synchronous chain, leading to reduced fault tolerance.
 
 3. Messaging Patterns: Queues versus Streams
 
-The most critical decision an architect makes is distinguishing between work distribution and event history [4].
+The most critical decision an architect makes is distinguishing between work distribution and event history.
 
 3.1 Queues (The Workhorse)
 
-Queues are messaging channels optimised for point-to-point processing. A message is typically delivered to and handled by a single consumer, which acknowledges completion to remove the task from the queue [3, 8; 4].
+Queues are messaging channels optimised for point-to-point processing. A message is typically delivered to and handled by a single consumer, which acknowledges completion to remove the task from the queue.
 
 * Ideal Use Cases:
-  * Load Levelling: Absorbing bursts of traffic to protect downstream services [4].
-  * Task Distribution: Ensuring background jobs, such as email sending or PDF generation, are processed exactly once by a worker [4].
-  * Backpressure Management: Buffering work when a consumer is unavailable or slow, preventing system-wide panic [4].
-  * Command Processing: Directing a specific action ("please do something") to be performed [4].
+  * Load Levelling: Absorbing bursts of traffic to protect downstream services.
+  * Task Distribution: Ensuring background jobs, such as email sending or PDF generation, are processed exactly once by a worker.
+  * Backpressure Management: Buffering work when a consumer is unavailable or slow, preventing system-wide panic.
+  * Command Processing: Directing a specific action ("please do something") to be performed.
 
 3.2 Streams (The System Memory)
 
-Streams are durable, append-only logs of events. Unlike queues, streams persist events, allowing multiple independent consumers to read and "catch up" with the same data at different times [3, 11; 4].
+Streams are durable, append-only logs of events. Unlike queues, streams persist events, allowing multiple independent consumers to read and "catch up" with the same data at different times.
 
 * Ideal Use Cases:
-  * Replayability: Re-processing historical events to recover from bugs or gain new insights [2, 4].
-  * Historical Reconstruction: Building or rebuilding the current state of a system from its complete history [2].
-  * Multi-consumer Fan-out: Broadcasting a single event to numerous disparate services, such as billing, inventory, and analytics [4].
+  * Replayability: Re-processing historical events to recover from bugs or gain new insights.
+  * Historical Reconstruction: Building or rebuilding the current state of a system from its complete history.
+  * Multi-consumer Fan-out: Broadcasting a single event to numerous disparate services, such as billing, inventory, and analytics.
 
 3.3 Decision Matrix: Queues vs. Streams
 
@@ -54,11 +54,11 @@ Factor	Queues	Streams
 Primary Goal	Work Orchestration (Tasks)	Event History (Ledger)
 Consumption	One worker handles one message	Multiple services consume the same event
 Persistence	Deleted after processing	Durable; retained for replay
-2026 Best Practice	Used for commands and background jobs	Used for domain events and history [4]
+2026 Best Practice	Used for commands and background jobs	Used for domain events and history
 
 4. Coordination Styles: Orchestration and Choreography
 
-Distributed services interact through two distinct models, often combined to manage complex cross-context communication [3, 12].
+Distributed services interact through two distinct models, often combined to manage complex cross-context communication.
 
 * Orchestration (Centralised Coordination): A central controller (e.g., a workflow engine or AWS Step Functions) manages the sequence of service invocations [3, 12]. This is best suited for complex workflows within a single bounded context where state and error handling must be tightly controlled [3, 12; 11].
 * Choreography (Decentralised Collaboration): Events flow between services without a central coordinator [3, 12]. Producers emit events to a broker, and consumers react independently based on a shared schema [3, 12]. This is the most effective model for communication between different bounded contexts, as it reduces cross-domain dependencies [3, 12].
